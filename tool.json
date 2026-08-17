@@ -1,0 +1,12 @@
+{
+  "id": "gorsel",
+  "name": "Görsel Sınıflandırıcı",
+  "namespace": "core",
+  "version": "0.1.0",
+  "faz": 1,
+  "aktif": true,
+  "description": "Bir klasördeki görselleri içeriklerine göre analiz edip isteğinize uygun alt klasörlere taşır (ör. 'ağaç olan resimleri Ağaç klasörüne topla')",
+  "module": "tools.gorsel",
+  "ui_entry": "panel.js",
+  "requires_folder": true
+}
