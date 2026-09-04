@@ -1,6 +1,11 @@
 @echo off
 setlocal enabledelayedexpansion
 
+REM Betigin calisma dizinini KENDI konumuna sabitle - "Yonetici olarak
+REM calistir" bazi Windows kurulumlarinda calisma dizinini System32ye
+REM sabitleyip goreli yol/robocopy komutlarini sessizce bozabiliyor.
+cd /d "%~dp0"
+
 echo ============================================
 echo   GORSEL SINIFLANDIRICI - TOOL KALDIRMA
 echo ============================================
