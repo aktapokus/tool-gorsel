@@ -12,9 +12,9 @@ const ICON_SEARCH = "<svg viewBox='0 0 24 24' width='15' height='15' fill='none'
 const ICON_CLIPBOARD = "<svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round' style='vertical-align:-2px'><rect x='8' y='2' width='8' height='4' rx='1'/><path d='M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2'/></svg>";
 const ICON_CHECK = "<svg viewBox='0 0 24 24' width='14' height='14' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='vertical-align:-2px'><polyline points='20 6 9 17 4 12'/></svg>";
 const ICON_UNDO = "<svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' style='vertical-align:-2px'><path d='M9 14 4 9l5-5'/><path d='M4 9h10a6 6 0 0 1 0 12h-1'/></svg>";
-const ACCENT = '#0D9488';
-const ACCENT_DARK = '#0F766E';
-const ACCENT_LIGHT = '#CCFBF1';
+const ACCENT = 'var(--blue)';       // cekirdek aksani (tum araclarda ayni sari)
+const ACCENT_DARK = 'var(--blue-dim)';
+const ACCENT_LIGHT = 'var(--blue-light)';
 
 // core'un AnalyzeRequest'i sadece {tool, istek, klasor} kabul ediyor — bu yüzden
 // kullanıcının isteği + taranan görsellerin açıklama bloğu TEK bir "istek"
@@ -73,11 +73,11 @@ function ensureStyles() {
     .gorsel-sonuc-area { flex: 1; min-height: 0; overflow-y: auto; padding: 16px; }
     .gorsel-durum-kutu {
       padding: 12px 16px; background: var(--gs-accent-light); border: 1px solid var(--gs-accent);
-      border-radius: 6px; font-size: 13px; color: var(--gs-accent-dark); margin-bottom: 12px;
+      border-radius: 6px; font-size: 13px; color: var(--blue-text,#7A5800); margin-bottom: 12px;
     }
     .gorsel-hata-kutu {
-      padding: 12px 16px; background: #FEF2F2; border: 1px solid #FECACA; border-radius: 6px;
-      font-size: 13px; color: #B91C1C; margin-bottom: 12px;
+      padding: 12px 16px; background: var(--red-light,#FEF2F2); border: 1px solid var(--red-light,#FECACA); border-radius: 6px;
+      font-size: 13px; color: var(--red,#B91C1C); margin-bottom: 12px;
     }
     .gorsel-ilerleme-bar-dis { background: var(--surface-2); border-radius: 4px; height: 6px; overflow: hidden; margin-top: 8px; }
     .gorsel-ilerleme-bar-ic { background: var(--gs-accent); height: 100%; transition: width 0.3s; }
@@ -87,19 +87,19 @@ function ensureStyles() {
     .gs-step-badge {
       display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
       width: 16px; height: 16px; border-radius: 50%; margin-right: 6px;
-      background: var(--gs-accent); color: #fff; font-size: 10px; font-weight: 600; font-family: var(--mono);
+      background: var(--gs-accent); color: var(--on-accent,#141412); font-size: 10px; font-weight: 600; font-family: var(--mono);
     }
     .gorsel-liste-item {
       display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--surface-2); font-size: 13px;
     }
-    .gorsel-liste-item .gs-id { font-weight: 600; color: var(--gs-accent-dark); flex-shrink: 0; width: 30px; }
+    .gorsel-liste-item .gs-id { font-weight: 600; color: var(--blue-text,#7A5800); flex-shrink: 0; width: 30px; }
     .gorsel-liste-item .gs-yol { color: var(--text-dim); flex-shrink: 0; max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .gorsel-liste-item .gs-aciklama { color: var(--text); }
     .gorsel-plan-item { display: flex; align-items: flex-start; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--surface-2); font-size: 13px; }
     .gorsel-plan-item .gs-ok { margin-top: 2px; }
     .gorsel-plan-item .gs-detay { flex: 1; }
     .gorsel-plan-item .gs-kaynak { color: var(--text-dim); font-size: 12px; }
-    .gorsel-plan-item .gs-hedef { color: var(--gs-accent-dark); font-weight: 500; }
+    .gorsel-plan-item .gs-hedef { color: var(--blue-text,#7A5800); font-weight: 500; }
     .gorsel-plan-footer { display: flex; gap: 8px; margin-top: 14px; }
     .gorsel-placeholder { padding: 24px; text-align: center; color: var(--text-xs); font-size: 12px; }
     .gs-hiz-notu { font-size: 11px; color: var(--text-xs); line-height: 1.5; margin-top: 8px; }
